@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        .cart {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #f8f9fa;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .nav-buttons {
+            margin-bottom: 20px;
+        }
+        .nav-buttons button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart">
+        <a href="/shopping-cart">Giỏ hàng</a>
+    </div>
+    <div class="nav-buttons">
+        <button onclick="window.location.href='/list-product'">Product List</button>
+        <button onclick="window.location.href='/shopping-cart'">Shopping Cart</button>
+    </div>
+    <h1>Product Information</h1>
+    <h2>Name: <%= product.name %></h2>
+    <p>Price: <%= product.price %></p>
+    <p>Description: <%= product.description %></p>
+</body>
+</html>
