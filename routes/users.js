@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/product');
 
-// Thêm sản phẩm vào giỏ hàng
 router.post('/shopping-cart', async (req, res) => {
   const productId = req.body.productId;
   try {
@@ -20,7 +19,6 @@ router.post('/shopping-cart', async (req, res) => {
   }
 });
 
-// Hiển thị giỏ hàng
 router.get('/shopping-cart', (req, res) => {
   const cart = req.cookies.cart || [];
   console.log(cart)
