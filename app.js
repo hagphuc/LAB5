@@ -21,8 +21,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
 
 app.use('/', indexRouter);
+app.use('/', usersRouter);
 
 let cart = [];
 
@@ -54,7 +56,7 @@ app.post('/shopping-cart', async (req, res) => {
     const product = await Product.findById(productId);
     if (product) {
       cart.push(product);
-      res.send('<script>window.history.back()</script>');
+      res.send('<script>window.history.back();</script>');
     } else {
       res.status(404).send('Product not found');
     }
